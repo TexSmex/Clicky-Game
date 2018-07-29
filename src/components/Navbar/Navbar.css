@@ -1,0 +1,22 @@
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+}
+
+
+
+.left {
+  float: left;
+}
+
+.center {
+
+  float: none;
+  text-align: center;
+  margin-left: 500px;
+}
+
+.right {
+
+  float: right;
+  margin-left: 800px;
+}
