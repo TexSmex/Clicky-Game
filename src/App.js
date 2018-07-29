@@ -1,30 +1,23 @@
 import React, { Component } from "react";
 import Cartoons from "./components/Cartoons";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-import Score from "./components/Score";
 import Navbar from "./components/Navbar";
-import friends from "./friends.json";
+import cartoons from "./cartoons.json";
 import "./App.css";
 
 class App extends Component {
 
 
-  // Setting this.state.friends to the friends json array
+  // Setting this.state.cartoons to the cartoons json array
   state = {
     score:0,
     topScore:0,
     idArr:[],
-    friends,
+    cartoons,
     title:"Click an image to begin!"
   };
 
-  // incrementScore = () => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const friends = this.state.friends.filter(friend => friend);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ friends });
-  // };
+ 
 
   // shake = () => {
 
@@ -44,11 +37,11 @@ class App extends Component {
 
   
 
-  AlertHell = (id) => {
+  clickGame = (id) => {
     
     if (this.state.idArr.indexOf(id)===-1) {
 
-    this.shuffle(this.state.friends);
+    this.shuffle(this.state.cartoons);
     this.state.idArr.push(id);
     this.setState({ score: this.state.score + 1 });
     this.setState({title : "You guessed correctly!"})
@@ -56,7 +49,7 @@ class App extends Component {
     }
     else {
 
-  this.shuffle(this.state.friends);
+  this.shuffle(this.state.cartoons);
   if (this.state.score>this.state.topScore) { this.setState({ topScore : this.state.score }) }
   this.setState({ idArr:[] });
   this.setState({ score:0 });
@@ -64,10 +57,9 @@ class App extends Component {
   }
   }
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
 
   componentWillMount()  {
-    this.shuffle(this.state.friends)
+    this.shuffle(this.state.cartoons)
   }
 
   render() {
@@ -78,16 +70,18 @@ class App extends Component {
        score = {this.state.score}
        topScore =  {this.state.topScore}
        />
-        <Title></Title>
-        <Score> </Score>
+ 
+
         <Wrapper >
-        {this.state.friends.map(friend => (
+
+        {/* Map over this.state.cartoons and render a cartoons tag component for each cartoon object */}
+        {this.state.cartoons.map(cartoon => (
           <Cartoons
             
-            id={friend.id}
-            key={friend.id}
-            AlertHell={this.AlertHell}
-            image={friend.image}
+            id={cartoon.id}
+            key={cartoon.id}
+            clickGame={this.clickGame}
+            image={cartoon.image}
            
           />
         ))}

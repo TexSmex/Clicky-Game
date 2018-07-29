@@ -1,6 +1,7 @@
 .clickable{
 
     background-size: cover;
+    background-position: center top;
     height: 170px;
     width: 170px;
     margin: 8px 25px;

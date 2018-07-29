@@ -3,7 +3,7 @@ import "./Cartoons.css";
 
 const Cartoons = props => (
 
-  <div role="img"  className="clickable"  style={{ backgroundImage : `url(${props.image})` }} onClick={() => props.AlertHell(props.id)} ></div>
+  <div role="img"  className="clickable"  style={{ backgroundImage : `url(${props.image})` }} onClick={() => props.clickGame(props.id)} ></div>
  
 );
 

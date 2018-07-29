@@ -1,22 +1,41 @@
-nav.navbar.navbar-default {
+nav .navbar .navbar-default {
   margin-bottom: 0;
+  
+}
+
+.navbar {
+
+  background-color:darkslategray !important;
+  font-size: 25px;
+  color: whitesmoke;
+
 }
 
 
 
-.left {
-  float: left;
+li a {
+  font-size: 35px
 }
 
-.center {
+.white{
 
-  float: none;
+  color: aliceblue;
+}
+
+h1, p{
+  font-size: 90px;
   text-align: center;
-  margin-left: 500px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.right {
+p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
 
-  float: right;
-  margin-left: 800px;
+.jumbotron { 
+
+background-color: black;
+margin-top: 50px;
+
 }
